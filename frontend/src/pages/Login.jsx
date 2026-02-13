@@ -9,7 +9,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://library-managment-backend-dkex.onrender.com", {
+      const response = await fetch("https://library-managment-backend-dkex.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
