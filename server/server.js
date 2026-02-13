@@ -7,8 +7,8 @@ app.use(cors());
 app.use(express.json());
 const PORT = process.env.port || 5000;
 
-
-mongoose.connect("mongodb+srv://ravinmshpt_db_user:Neminath22@cluster0.omegwdw.mongodb.net/userdb?appName=Cluster0").then(() => console.log("Connected!!")).catch((err) => console.log(err));
+require('dotenv').config();
+mongoose.connect(process.env.MONGO_URI).then(() => console.log("Connected!!")).catch((err) => console.log(err));
 
 const userSchema = new mongoose.Schema({
   name: {
