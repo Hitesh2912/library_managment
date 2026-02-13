@@ -58,6 +58,15 @@ app.post("/signup", async (req, res) => {
   }
 });
 
+app.get("/signup", async (req, res) => {
+  try {
+    const names = await name.find();
+    res.json(names);
+  } catch (error) {
+    res.json({ message: "Server error" });
+  }
+});
+
 // Add Book
 app.post("/book", async (req, res) => {
   const { book } = req.body;
