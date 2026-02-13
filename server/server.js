@@ -60,10 +60,10 @@ app.post("/signup", async (req, res) => {
 
 app.get("/signup", async (req, res) => {
   try {
-    const names = await name.find();
-    res.json(names);
+    const users = await User.find();
+    res.json(users);
   } catch (error) {
-    res.json({ message: "Server error" });
+    res.json({ message: "Server error", error: error.message });
   }
 });
 
